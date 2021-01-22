@@ -5,9 +5,7 @@ module.exports = function(ctx) {
     var utils = require("./utilities");
    
   console.log("---DEBUG BUILD----");
-  var configFilePath = path.join(ctx.opts.projectRoot, "www",'AndroidManifest.xml');
-  console.log(configFilePath);
-  var AndroidPath = path.join(ctx.opts.projectRoot,'platforms');
+  var AndroidPath = path.join(ctx.opts.projectRoot,'platforms','android');
   var files = utils.getFilesFromPath(AndroidPath);
   console.log(files);
     console.log("---DEBUG END----");
