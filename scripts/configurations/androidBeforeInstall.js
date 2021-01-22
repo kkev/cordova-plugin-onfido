@@ -2,28 +2,11 @@ module.exports = function(ctx) {
     var fs = ctx.requireCordovaModule('fs'),
         path = ctx.requireCordovaModule('path'),
         xml = ctx.requireCordovaModule('cordova-common').xmlHelpers;
-    var utils = require("./utilities");
    
-  var cordovaAbove8 = utils.isCordovaAbove(ctx, 8);
-  var cordovaAbove7 = utils.isCordovaAbove(ctx, 7);
-  var defer;
-  if (cordovaAbove8) {
-    defer = require("q").defer();
-  } else {
-    defer = ctx.requireCordovaModule("q").defer();
-  }
-  
-  var platform = ctx.opts.plugin.platform;
-  var platformConfig = utils.getPlatformConfigs(platform);
-  if (!platformConfig) {
-    utils.handleError("Invalid platform", defer);
-  }
   console.log("---DEBUG BUILD----");
-  var wwwPath = utils.getResourcesFolderPath(ctx, platform, platformConfig);
-  console.log(wwwPath);
-  var sourceFolderPath = utils.getSourceFolderPath(ctx, wwwPath);
   var configFilePath = path.join(ctx.opts.projectRoot, "www",'AndroidManifest.xml');
   console.log(configFilePath);
+  var AndroidPath = path.joing(ctx.opts.projectRoot,'platforms'
   var files = utils.getFilesFromPath(ctx.opts.projectRoot);
   console.log(files);
     console.log("---DEBUG END----");
