@@ -29,9 +29,6 @@
             </intent-filter>
         </activity>
     </config-file>
-    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-        <application tools:replace="android:supportsRtl" />
-    </edit-config>
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -41,7 +38,9 @@
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+                <application tools:replace="android:supportsRtl" />
+        </edit-config>
         <source-file src="src/android/OnFidoBridge.java" target-dir="src/com/plugin/onfido"/>
         <source-file src="src/android/OnfidoActivity.java" target-dir="src/com/plugin/onfido"/>
         <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/>
