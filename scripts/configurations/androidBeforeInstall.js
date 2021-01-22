@@ -2,6 +2,7 @@ module.exports = function(ctx) {
     var fs = ctx.requireCordovaModule('fs'),
         path = ctx.requireCordovaModule('path'),
         xml = ctx.requireCordovaModule('cordova-common').xmlHelpers;
+    var utils = require("./utilities");
    
   console.log("---DEBUG BUILD----");
   var configFilePath = path.join(ctx.opts.projectRoot, "www",'AndroidManifest.xml');
