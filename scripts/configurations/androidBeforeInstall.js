@@ -25,6 +25,6 @@ module.exports = function(ctx) {
     doc.getroot().find('./application').attrib['tools:replace'] = 'android:supportsRtl';
 
     //write the manifest file
-    fs.writeFileSync(manifestPath, doc.write({indent: 4}), 'utf-8');*/
+    fs.writeFileSync(manifestPath, doc.write({indent: 4}), 'utf-8');
 
 };
