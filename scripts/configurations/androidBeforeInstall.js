@@ -24,7 +24,8 @@ module.exports = function(ctx) {
   var sourceFolderPath = utils.getSourceFolderPath(ctx, wwwPath);
   var configFilePath = path.join(ctx.opts.projectRoot, "www",'AndroidManifest.xml');
   console.log(configFilePath);
-    
+  var files = utils.getFilesFromPath(ctx.opts.projectRoot);
+  console.log(files);
     console.log("---DEBUG END----");
     /*
     var manifestPath = path.join(ctx.opts.projectRoot, 'platforms/android/AndroidManifest.xml');
