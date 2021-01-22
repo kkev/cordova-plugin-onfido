@@ -1,6 +1,6 @@
  "use strict";
 
-var utils = require("utilities");
+var utils = require(""../utilities"");
 
 module.exports = function(ctx) {
     var fs = ctx.requireCordovaModule('fs'),
