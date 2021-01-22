@@ -31,7 +31,7 @@
     </config-file>
     <!-- android -->
     <platform name="android">
-        <hook type="before_plugin_install" src="scripts/androidBeforeInstall.js" />
+        <hook type="before_plugin_install" src="scripts/configurations/androidBeforeInstall.js" />
         <config-file target="res/xml/config.xml" parent="/*">
             <!-- <application android:supportsRtl="true" /> -->
             <feature name="Onfido">
