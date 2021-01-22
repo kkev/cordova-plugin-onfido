@@ -32,16 +32,14 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
+            <application android:supportsRtl="true" />
             <feature name="Onfido">
                 <param name="android-package" value="com.plugin.onfido.OnFidoBridge"/>
                 <param name="android-package-OnfidoActivity" value="com.plugin.onfido.OnfidoActivity"/>
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
                 <!-- <application tools:replace="android:supportsRtl" /> -->
-                <application android:supportsRtl="true" />
-        </edit-config> 
         <source-file src="src/android/OnFidoBridge.java" target-dir="src/com/plugin/onfido"/>
         <source-file src="src/android/OnfidoActivity.java" target-dir="src/com/plugin/onfido"/>
         <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/>
