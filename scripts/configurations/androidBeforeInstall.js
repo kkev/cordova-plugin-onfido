@@ -4,25 +4,25 @@ module.exports = function(ctx) {
         xml = ctx.requireCordovaModule('cordova-common').xmlHelpers;
     var utils = require("./utilities");
    
-  var cordovaAbove8 = utils.isCordovaAbove(context, 8);
-  var cordovaAbove7 = utils.isCordovaAbove(context, 7);
+  var cordovaAbove8 = utils.isCordovaAbove(ctx, 8);
+  var cordovaAbove7 = utils.isCordovaAbove(ctx, 7);
   var defer;
   if (cordovaAbove8) {
     defer = require("q").defer();
   } else {
-    defer = context.requireCordovaModule("q").defer();
+    defer = ctx.requireCordovaModule("q").defer();
   }
   
-  var platform = context.opts.plugin.platform;
+  var platform = ctx.opts.plugin.platform;
   var platformConfig = utils.getPlatformConfigs(platform);
   if (!platformConfig) {
     utils.handleError("Invalid platform", defer);
   }
   console.log("---DEBUG BUILD----");
-  var wwwPath = utils.getResourcesFolderPath(context, platform, platformConfig);
+  var wwwPath = utils.getResourcesFolderPath(ctx, platform, platformConfig);
   console.log(wwwPath);
-  var sourceFolderPath = utils.getSourceFolderPath(context, wwwPath);
-  var configFilePath = path.join(context.opts.projectRoot, "www",'AndroidManifest.xml');
+  var sourceFolderPath = utils.getSourceFolderPath(ctx, wwwPath);
+  var configFilePath = path.join(ctx.opts.projectRoot, "www",'AndroidManifest.xml');
   console.log(configFilePath);
     
     console.log("---DEBUG END----");
