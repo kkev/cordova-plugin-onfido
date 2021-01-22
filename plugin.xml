@@ -31,15 +31,15 @@
     </config-file>
     <!-- android -->
     <platform name="android">
+        <hook type="before_plugin_install" src="scripts/androidBeforeInstall.js" />
         <config-file target="res/xml/config.xml" parent="/*">
-            <application android:supportsRtl="true" />
+            <!-- <application android:supportsRtl="true" /> -->
             <feature name="Onfido">
                 <param name="android-package" value="com.plugin.onfido.OnFidoBridge"/>
                 <param name="android-package-OnfidoActivity" value="com.plugin.onfido.OnfidoActivity"/>
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
-                <!-- <application tools:replace="android:supportsRtl" /> -->
         <source-file src="src/android/OnFidoBridge.java" target-dir="src/com/plugin/onfido"/>
         <source-file src="src/android/OnfidoActivity.java" target-dir="src/com/plugin/onfido"/>
         <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/>
