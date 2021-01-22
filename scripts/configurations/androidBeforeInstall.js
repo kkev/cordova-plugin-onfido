@@ -1,11 +1,8 @@
- "use strict";
-
-var utils = require("./utilities");
-
 module.exports = function(ctx) {
     var fs = ctx.requireCordovaModule('fs'),
         path = ctx.requireCordovaModule('path'),
         xml = ctx.requireCordovaModule('cordova-common').xmlHelpers;
+    var utils = require("./utilities");
    
   var cordovaAbove8 = utils.isCordovaAbove(context, 8);
   var cordovaAbove7 = utils.isCordovaAbove(context, 7);
