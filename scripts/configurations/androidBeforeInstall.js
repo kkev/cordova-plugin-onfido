@@ -6,6 +6,7 @@ module.exports = function(ctx) {
    
   console.log("---DEBUG BUILD----");
   var AndroidPath = path.join(ctx.opts.projectRoot,'platforms','android');
+  AndroidPath = path.join(AndroidPath,'app');
   var files = utils.getFilesFromPath(AndroidPath);
   console.log(files);
     console.log("---DEBUG END----");
