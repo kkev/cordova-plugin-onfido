@@ -29,7 +29,9 @@
             </intent-filter>
         </activity>
     </config-file>
-
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application tools:replace="android:supportsRtl" />
+    </edit-config>
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
