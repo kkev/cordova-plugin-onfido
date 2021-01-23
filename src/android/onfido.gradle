@@ -12,4 +12,7 @@ dependencies {
   compile ('com.google.android.gms:play-services-base:+') {
       exclude group: 'com.android.support' // to avoid conflicts with your current support library
   }
+  compile ('com.google.firebase:firebase-common:+') {
+      exclude group: 'com.google.firebase.messaging.FirebaseMessagingService' // to avoid conflicts with Current firebase plugins
+  }
 }
