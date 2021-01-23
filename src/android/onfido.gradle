@@ -7,7 +7,7 @@ repositories {
 }
 dependencies {
   compile ('com.onfido.sdk.capture:onfido-capture-sdk:7.4.0') {
-      exclude group: 'com.google.firebase' // to avoid conflicts with Current firebase plugins
+      exclude group: 'com.google.firebase', module: 'messaging' // to avoid conflicts with Current firebase plugins
   }
   
   // only required to support TLSv1.2 for devices with Android API lower than 5.x
