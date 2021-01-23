@@ -7,6 +7,8 @@ repositories {
 }
 dependencies {
   compile 'com.onfido.sdk.capture:onfido-capture-sdk:7.4.0'
+  
+  // only required to support TLSv1.2 for devices with Android API lower than 5.x
   compile ('com.google.android.gms:play-services-base:+') {
       exclude group: 'com.android.support' // to avoid conflicts with your current support library
   }
