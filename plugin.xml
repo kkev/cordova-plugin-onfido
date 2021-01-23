@@ -42,7 +42,8 @@
         </config-file>
         <source-file src="src/android/OnFidoBridge.java" target-dir="src/com/plugin/onfido"/>
         <source-file src="src/android/OnfidoActivity.java" target-dir="src/com/plugin/onfido"/>
-        <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/>
+        <framework src="com.onfido.sdk.capture:onfido-capture-sdk:7.4.0" />
+        <!-- <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/> -->
     </platform>
 
     <!-- ios -->
