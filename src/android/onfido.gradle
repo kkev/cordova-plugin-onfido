@@ -6,13 +6,12 @@ repositories {
   }
 }
 dependencies {
-  compile 'com.onfido.sdk.capture:onfido-capture-sdk:7.4.0'
+  compile ('com.onfido.sdk.capture:onfido-capture-sdk:7.4.0') {
+      exclude group: 'com.google.firebase.messaging' // to avoid conflicts with Current firebase plugins
+  }
   
   // only required to support TLSv1.2 for devices with Android API lower than 5.x
   compile ('com.google.android.gms:play-services-base:+') {
       exclude group: 'com.android.support' // to avoid conflicts with your current support library
-  }
-  compile ('com.google.firebase:firebase-common:+') {
-      exclude group: 'com.google.firebase.messaging' // to avoid conflicts with Current firebase plugins
   }
 }
