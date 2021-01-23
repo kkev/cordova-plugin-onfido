@@ -7,7 +7,4 @@ repositories {
 }
 dependencies {
   compile 'com.onfido.sdk.capture:onfido-capture-sdk:7.4.0'
-
-
-    }
 }
