@@ -1,7 +1,7 @@
 module.exports = function(ctx) {
-    var fs = ctx.require('fs'),
-        path = ctx.require('path'),
-        xml = ctx.require('cordova-common').xmlHelpers;
+    var fs = require('fs'),
+        path = require('path'),
+        xml = require('cordova-common').xmlHelpers;
     var utils = require("./utilities");
    
   console.log("---DEBUG BUILD----");
