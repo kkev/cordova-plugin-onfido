@@ -110,7 +110,7 @@ function getAppId(context) {
   if (cordovaAbove8) {
     et = require('elementtree');
   } else {
-    et = context.requireCordovaModule('elementtree');
+    et = context.require('elementtree');
   }
 
   var config_xml = path.join(context.opts.projectRoot, 'config.xml');
