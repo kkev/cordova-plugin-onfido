@@ -16,30 +16,31 @@
     </engines> -->
 
     <js-module name="Onfido" src="www/onfido.js">
-        <clobbers target="onfido"/>
+<!--        <clobbers target="onfido"/>-->
         <clobbers target="cordova.plugins.onfido"/>
-        <clobbers target="plugin.onfido"/>
+<!--        <clobbers target="plugin.onfido"/>-->
     </js-module>
 
-    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
-        <activity android:name="com.plugin.onfido.OnfidoActivity" android:label="Onfido Activity">
-            <intent-filter>
-                <action android:name="com.plugin.onfido.OnfidoActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-    </config-file>
     <!-- android -->
     <platform name="android">
-        <hook type="before_plugin_install" src="scripts/configurations/androidBeforeInstall.js" />
+
         <config-file target="res/xml/config.xml" parent="/*">
-            <!-- <application android:supportsRtl="true" /> -->
             <feature name="Onfido">
                 <param name="android-package" value="com.plugin.onfido.OnFidoBridge"/>
                 <param name="android-package-OnfidoActivity" value="com.plugin.onfido.OnfidoActivity"/>
-                <param name="onload" value="true"/>
+<!--                <param name="onload" value="true"/>-->
             </feature>
         </config-file>
+
+		<config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.plugin.onfido.OnfidoActivity" android:label="Onfido Activity">
+				<!--            <intent-filter>-->
+				<!--                <action android:name="com.plugin.onfido.OnfidoActivity"/>-->
+				<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+				<!--            </intent-filter>-->
+			</activity>
+		</config-file>
+
         <source-file src="src/android/OnFidoBridge.java" target-dir="src/com/plugin/onfido"/>
         <source-file src="src/android/OnfidoActivity.java" target-dir="src/com/plugin/onfido"/>
         <framework src="src/android/onfido.gradle" custom="true" type="gradleReference"/>
@@ -64,17 +65,18 @@
         <header-file src="src/ios/OnFidoBridge.h"/>
         <source-file src="src/ios/OnFidoBridge.m"/>
 
+<!--        <pods-config ios-min-version="9.0" use-frameworks="true"/>-->
+<!--        <framework src="Onfido" type="podspec" spec="13.2.0"/>-->
+
 		<podspec>
 			<config>
 				<source url="https://cdn.cocoapods.org/"/>
 			</config>
-			<pods use-frameworks="true">
-				<pod name="Onfido" spec="20.0.0"/>
+			<pods>
+				<pod name="Onfido" spec="21.0.0"/>
 			</pods>
 		</podspec>
-        <!--<pods-config ios-min-version="9.0" use-frameworks="true"/>
-        <framework src="Onfido" type="podspec" spec="20.0.0"/>-->
 
-        <!--<framework src="Onfido" type="podspec" spec="13.2.0"/> -->
+
     </platform>
 </plugin>

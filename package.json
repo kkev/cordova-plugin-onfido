@@ -1,6 +1,35 @@
 {
-  "name": "cordova-plugin-onfido",
-  "version": "1.1.5",
+  "_from": "cordova-plugin-onfido@1.1.5",
+  "_id": "cordova-plugin-onfido@1.1.5",
+  "_inBundle": false,
+  "_integrity": "sha512-3GS3rs+um+SbwgTF8+te5wpQ0AIcVXKmSyYvHg2YrJImkSzxnplbGlGe10X2Rm3a+7N0WOOLnZU9QI5wGeg+og==",
+  "_location": "/cordova-plugin-onfido",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-onfido@1.1.5",
+    "name": "cordova-plugin-onfido",
+    "escapedName": "cordova-plugin-onfido",
+    "rawSpec": "1.1.5",
+    "saveSpec": null,
+    "fetchSpec": "1.1.5"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-onfido/-/cordova-plugin-onfido-1.1.5.tgz",
+  "_shasum": "3158f883f6d0b2f1d928edcb8bc5595a2f9f891c",
+  "_spec": "cordova-plugin-onfido@1.1.5",
+  "_where": "C:\\web-repos-merge\\etoro-front-web\\etoro-front-assets-server\\wrapper\\cordova-new",
+  "author": {
+    "name": "Rewire LTD"
+  },
+  "bugs": {
+    "url": "https://github.com/rewireltd1/cordova-plugin-onfido/issues"
+  },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-onfido",
     "platforms": [
@@ -8,11 +37,9 @@
       "ios"
     ]
   },
+  "deprecated": false,
   "description": "Cordova plugin for Onfido",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rewireltd1/cordova-plugin-onfido.git"
-  },
+  "homepage": "https://github.com/rewireltd1/cordova-plugin-onfido#readme",
   "keywords": [
     "onfido",
     "onfido-cordova",
@@ -20,10 +47,11 @@
     "onfido-cordova-ios",
     "onfido-cordova-android"
   ],
-  "author": "Rewire LTD",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rewireltd1/cordova-plugin-onfido/issues"
+  "name": "cordova-plugin-onfido",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rewireltd1/cordova-plugin-onfido.git"
   },
-  "homepage": "https://github.com/rewireltd1/cordova-plugin-onfido#readme"
+  "version": "1.1.5"
 }

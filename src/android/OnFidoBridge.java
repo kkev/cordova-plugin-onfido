@@ -3,18 +3,14 @@
 package com.plugin.onfido;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -22,19 +18,28 @@ public class OnFidoBridge extends CordovaPlugin {
   private static final String TAG = "OnFidoBridge";
   private CallbackContext currentCallbackContext = null;
 
-  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    super.initialize(cordova, webView);
+  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
-    Log.d(TAG, "Initializing OnFido");
+  	 if (action.equals("init")) {
+                cordova.getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initOnfido(args, callbackContext);
+                    }
+                });
+                return true;
+            }
+
+            return false;
   }
 
-  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-    if(action.equals("init")) {
+   private void initOnfido(JSONArray args, CallbackContext callbackContext) {
+
       this.currentCallbackContext = callbackContext;
-      final String token;
-      final String applicantId;
-      String locale;
-      String documentType;
+      String token = null;
+      String applicantId = null;
+      String locale = null;
+      String documentType = null;
       final ArrayList flowSteps = new ArrayList<String>();
       JSONArray flowStepsArray;
 
@@ -59,19 +64,16 @@ public class OnFidoBridge extends CordovaPlugin {
         }
       } catch (JSONException e) {
         callbackContext.error("Error encountered: " + e.getMessage());
-        return false;
       }
 
-      Intent intent = new Intent("com.plugin.onfido.OnfidoActivity");
+      Intent intent = new Intent(cordova.getActivity(), OnfidoActivity.class);
       intent.putExtra("token", token);
       intent.putExtra("applicant_id", applicantId);
       intent.putExtra("document_type", documentType);
       intent.putExtra("flow_steps", flowSteps);
       intent.putExtra("locale", locale);
       cordova.startActivityForResult(this, intent, 1);
-    }
-    return true;
-  }
+   }
 
   @Override
   public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
