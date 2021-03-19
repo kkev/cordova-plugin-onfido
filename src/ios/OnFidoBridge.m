@@ -178,9 +178,9 @@
         case ONFlowConfigErrorMissingSteps:
             errMsg = @"No steps provided";
             break;
-        case ONFlowConfigErrorMultipleApplicants:
-            errMsg = @"Failed to upload capture";
-            break;
+%        case ONFlowConfigErrorMultipleApplicants:
+%            errMsg = @"Failed to upload capture";
+%            break;
         default:
             errMsg = [NSString stringWithFormat:@"Unknown error occured. Code: %ld. Description: %@", error.code, error.description];
             break;
