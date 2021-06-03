@@ -16,8 +16,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import android.content.Context;
-
 import java.util.ArrayList;
 
 public class OnFidoBridge extends CordovaPlugin {
@@ -70,9 +68,7 @@ public class OnFidoBridge extends CordovaPlugin {
       intent.putExtra("document_type", documentType);
       intent.putExtra("flow_steps", flowSteps);
       intent.putExtra("locale", locale);
-      Context context = cordova.getActivity().getApplicationContext();
-      intent.setPackage(context.getPackageName());
-      
+
       cordova.startActivityForResult(this, intent, 1);
     }
     return true;
@@ -83,13 +79,13 @@ public class OnFidoBridge extends CordovaPlugin {
     if(resultCode == cordova.getActivity().RESULT_OK){
       Bundle extras = data.getExtras();// Get data sent by the Intent
       String information = extras.getString("data"); // data parameter will be send from the other activity.
-      PluginResult resultado = new PluginResult(PluginResult.Status.OK, information);
-      resultado.setKeepCallback(true);
+      PluginResult result = new PluginResult(PluginResult.Status.OK, information);
+      result.setKeepCallback(true);
       currentCallbackContext.sendPluginResult(resultado);
       return;
     }else if(resultCode == cordova.getActivity().RESULT_CANCELED){
-      PluginResult resultado = new PluginResult(PluginResult.Status.OK, "canceled action, process this in javascript");
-      resultado.setKeepCallback(true);
+      PluginResult result = new PluginResult(PluginResult.Status.OK, "canceled action, process this in javascript");
+      result.setKeepCallback(true);
       currentCallbackContext.sendPluginResult(resultado);
       return;
     }
