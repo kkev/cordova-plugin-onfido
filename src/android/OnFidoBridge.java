@@ -71,7 +71,7 @@ public class OnFidoBridge extends CordovaPlugin {
       intent.putExtra("flow_steps", flowSteps);
       intent.putExtra("locale", locale);
       
-      intent.setPackage(Context.getPackageName());
+      intent.setPackage(getApplicationContext().getPackageName());
       
       cordova.startActivityForResult(this, intent, 1);
     }
