@@ -16,6 +16,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 public class OnFidoBridge extends CordovaPlugin {
@@ -68,6 +70,9 @@ public class OnFidoBridge extends CordovaPlugin {
       intent.putExtra("document_type", documentType);
       intent.putExtra("flow_steps", flowSteps);
       intent.putExtra("locale", locale);
+      
+      intent.setPackage(Context.getPackageName());
+      
       cordova.startActivityForResult(this, intent, 1);
     }
     return true;
