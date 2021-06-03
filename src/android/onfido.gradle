@@ -6,7 +6,8 @@ repositories {
   }
 }
 dependencies {
-  compile ('com.onfido.sdk.capture:onfido-capture-sdk:5.3.0') {
+  compile ('com.onfido.sdk.capture:onfido-capture-sdk:9.3.1') {
+  //compile ('com.onfido.sdk.capture:onfido-capture-sdk:5.3.0') {
       //exclude group: 'com.google.firebase', module: 'messaging' // to avoid conflicts with Current firebase plugins
   }
   
