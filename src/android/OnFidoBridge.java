@@ -81,12 +81,12 @@ public class OnFidoBridge extends CordovaPlugin {
       String information = extras.getString("data"); // data parameter will be send from the other activity.
       PluginResult result = new PluginResult(PluginResult.Status.OK, information);
       result.setKeepCallback(true);
-      currentCallbackContext.sendPluginResult(resultado);
+      currentCallbackContext.sendPluginResult(result);
       return;
     }else if(resultCode == cordova.getActivity().RESULT_CANCELED){
       PluginResult result = new PluginResult(PluginResult.Status.OK, "canceled action, process this in javascript");
       result.setKeepCallback(true);
-      currentCallbackContext.sendPluginResult(resultado);
+      currentCallbackContext.sendPluginResult(result);
       return;
     }
     // Handle other results if exists.
