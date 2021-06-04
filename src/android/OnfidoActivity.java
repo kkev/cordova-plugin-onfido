@@ -97,7 +97,7 @@ public class OnfidoActivity extends Activity {
             FlowStep[] flow = generateFlowStep(flowSteps, DocumentTypesMap.get(documentType));
 
             final OnfidoConfig config = OnfidoConfig.builder(this)
-                    .withToken(token)
+                    .withSDKToken(token)
                     .withApplicant(applicantId)
                     .withCustomFlow(flow)
                     .withLocale(new Locale(locale))
