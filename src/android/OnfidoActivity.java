@@ -98,7 +98,6 @@ public class OnfidoActivity extends Activity {
 
             final OnfidoConfig config = OnfidoConfig.builder(this)
                     .withSDKToken(token)
-                    .withApplicant(applicantId)
                     .withCustomFlow(flow)
                     .withLocale(new Locale(locale))
                     .build();
